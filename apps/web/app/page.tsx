@@ -1,10 +1,10 @@
-import { Button } from "ui";
+import { Button } from "@7879/ui/Button"
 
 export default function Web() {
   return (
     <div>
       <h1>Web</h1>
-      <Button />
+      <Button test={true} />
     </div>
-  );
+  )
 }
