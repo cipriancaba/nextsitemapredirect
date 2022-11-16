@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Test } from "./test"
+import { Test } from "./Test"
 export interface ButtonProps {
   test: boolean
 }

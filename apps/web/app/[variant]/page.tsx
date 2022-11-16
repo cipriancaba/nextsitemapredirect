@@ -8,3 +8,14 @@ export default function Web() {
     </div>
   )
 }
+
+export const generateStaticParams = async () => {
+  return [
+    {
+      variant: "0",
+    },
+    {
+      variant: "1",
+    },
+  ]
+}
