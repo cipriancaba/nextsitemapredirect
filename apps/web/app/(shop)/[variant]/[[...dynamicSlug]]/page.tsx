@@ -1,9 +1,9 @@
 import { Button } from "@7879/ui/Button"
 
-export default function Web() {
+export default function Web({ params }: { params: any }) {
   return (
     <div>
-      <h1>Web</h1>
+      <h1>{JSON.stringify(params)}</h1>
       <Button test={true} />
     </div>
   )
@@ -18,6 +18,10 @@ export const generateStaticParams = async () => {
     {
       variant: "1",
       dynamicSlug: [],
+    },
+    {
+      variant: "no-variant",
+      dynamicSlug: ["about-us"],
     },
   ]
 }
