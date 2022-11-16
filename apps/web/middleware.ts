@@ -15,9 +15,9 @@ export function middleware(request: NextRequest) {
   if (cookieSeed?.value) {
     url.pathname = url.pathname.replace("/", `/${cookieSeed.value}/`)
     const response = NextResponse.rewrite(url)
-    if (url.pathname.endsWith("/")) {
-      url.pathname = url.pathname.substring(0, url.pathname.length - 1)
-    }
+    // if (url.pathname.endsWith("/")) {
+    //   url.pathname = url.pathname.substring(0, url.pathname.length - 1)
+    // }
     return response
   } else {
     const response = NextResponse.rewrite(url)
@@ -26,9 +26,9 @@ export function middleware(request: NextRequest) {
       maxAge: THIRTY_DAYS,
     })
 
-    if (url.pathname.endsWith("/")) {
-      url.pathname = url.pathname.substring(0, url.pathname.length - 1)
-    }
+    // if (url.pathname.endsWith("/")) {
+    //   url.pathname = url.pathname.substring(0, url.pathname.length - 1)
+    // }
     return response
   }
 
