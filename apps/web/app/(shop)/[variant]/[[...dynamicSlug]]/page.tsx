@@ -13,11 +13,11 @@ export const generateStaticParams = async () => {
   return [
     {
       variant: "0",
-      dynamicSlug: [],
+      dynamicSlug: ["homepage"],
     },
     {
       variant: "1",
-      dynamicSlug: [],
+      dynamicSlug: ["homepage"],
     },
     {
       variant: "no-variant",
