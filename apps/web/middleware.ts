@@ -3,10 +3,6 @@ import { NextResponse } from "next/server"
 
 const THIRTY_DAYS = 1000 * 60 * 24 * 30
 
-const variants = {
-  "/homepage": ["0", "1", "2"],
-}
-
 export function middleware(request: NextRequest) {
   console.log("---", request.nextUrl.pathname)
 
@@ -32,17 +28,15 @@ export function middleware(request: NextRequest) {
     variantPathnameKey = "/articles/slug"
   }
 
-  const pregeneratedPageVariants = variants[variantPathnameKey]
-
-  if (pregeneratedPageVariants && pregeneratedPageVariants.length) {
-    const pageVariants = pregeneratedPageVariants || ["no-variant"]
+  if (true) {
+    const pageVariants = ["no-variant"]
     const COOKIE_NAME = `7879_AB_TESTING_${variantPathnameKey}`
     const SEED_NAME = `7879_SEED`
     const cookie = request.cookies.get(COOKIE_NAME)
     const cookieSeed = request.cookies.get(SEED_NAME)
 
     // Path looks like seed.seed2.0;exp.3vFqTWfbQQi8-s_MiE8i-g.0
-    const variantPath = "0"
+    const variantPath = "no-variant"
 
     console.log("middleware", variantPath, cookie?.value, cookieSeed?.value)
 
@@ -90,6 +84,27 @@ export function middleware(request: NextRequest) {
   return NextResponse.next()
 }
 
-// export const config = {
-//   matcher: ["/", "/about-us"],
-// }
+export const config = {
+  matcher: [
+    "/products/:slug*",
+    // '/',
+    "/shop/:slug*",
+    "/shop",
+    "/collections/:slug*",
+    "/collections",
+    "/articles/:slug*",
+    "/articles",
+    "/faqs",
+    "/contact-us",
+    "/about-us",
+    "/privacy-policy",
+    "/returns-policy",
+    "/terms-and-conditions",
+    "/learn/investment",
+    "/learn/portfolio",
+    "/learn/sustainability",
+    "/learn/purity",
+    "/learn/pricing",
+    "/homepage",
+  ],
+}
