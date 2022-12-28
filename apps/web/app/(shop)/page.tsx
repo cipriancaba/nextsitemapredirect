@@ -1,5 +1,4 @@
 import { Button } from "@7879/ui/Button"
-import Link from "next/link"
 
 export default function Web({ params }: { params: any }) {
   return (

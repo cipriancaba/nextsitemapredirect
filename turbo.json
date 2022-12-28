@@ -1,8 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["$NEXT_PUBLIC_ABSOLUTE_PATH"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "$NEXT_PUBLIC_ABSOLUTE_PATH"],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
